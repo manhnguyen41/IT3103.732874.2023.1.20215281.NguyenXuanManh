@@ -1,0 +1,18 @@
+
+X
+java:S1854";Remove this useless assignment to local variable "matrixB".(èŠí8øô¦‹³1
+]
+java:S1854
+";Remove this useless assignment to local variable "matrixA".(€©—üÿÿÿÿ8øô¦‹³1
+H
+java:S1481"&Remove this unused "a" local variable.(¾À¹°úÿÿÿÿ8øô¦‹³1
+B
+java:S1481"&Remove this unused "b" local variable.(ÛÅ*8øô¦‹³1
+H
+java:S1481	"&Remove this unused "c" local variable.(•î¼ıÿÿÿÿ8øô¦‹³1
+N
+java:S1481
+",Remove this unused "matrixA" local variable.(€©—üÿÿÿÿ8øô¦‹³1
+I
+java:S1481",Remove this unused "matrixB" local variable.(èŠí8øô¦‹³1
+L	java:S106"+Replace this use of System.out by a logger.(»ÆÍƒÿÿÿÿÿ8«†°‹³1
