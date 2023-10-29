@@ -1,6 +1,6 @@
 package lab01;
 
-// Example 5: ShowTwoNumbers.java
+// Write a program to calculate sum, difference, product, and quotient of 2 double numbers which are entered by users.
 
 import javax.swing.JOptionPane;
 

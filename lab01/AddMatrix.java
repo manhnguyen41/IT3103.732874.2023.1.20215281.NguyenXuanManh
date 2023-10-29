@@ -1,6 +1,9 @@
 package lab01;
 
+// Write a Java program to add two matrices of the same size.
+
 public class AddMatrix {
+    // Print a matrix
     public static void print(int [][]matrix) {
         for (int i = 0; i < 5; i++) {
             for (int j = 0; j < 5; j++) {
@@ -16,6 +19,7 @@ public class AddMatrix {
         int [][]matrixB = new int[5][5];
         int [][]matrixC = new int[5][5];
 
+        // Generate 2 matrices and calculate sum of them
         for (int i = 0; i < 5; i++) {
             for (int j = 0; j < 5; j++) {
                 matrixA[i][j] = i + j;
@@ -24,12 +28,15 @@ public class AddMatrix {
             }
         }
 
+        // Print first matrix
         System.out.println("First matrix:");
         print(matrixA);
 
+        // Print second matrix
         System.out.println("Second matrix:");
         print(matrixB);
 
+        // Print sum of them
         System.out.println("Sum of them:");
         print(matrixC);
     }

@@ -1,10 +1,14 @@
 package lab01;
 
+// Write a program to display the number of days of a month, which is entered by users (both month and year).
+// If it is an invalid month/year, ask the user to enter again.
+
 import java.util.Scanner;
 
 public class DayOfMonth {
-    // Check if year is valid
     public static String [][]months = new String[5][12];
+
+    // Check if year is valid
     public static boolean checkYear(String year) {
         // Check if year is not a number
         for (int i = 0; i < year.length(); i++) {
@@ -47,6 +51,7 @@ public class DayOfMonth {
         String year, month;
         int monthNum;
 
+        // Generate the name and date of months
         months[0][0] = "January"; months[4][0] = "31";
         months[0][1] = "February"; months[4][1] = "28";
         months[0][2] = "March"; months[4][2] = "31";
@@ -61,22 +66,30 @@ public class DayOfMonth {
         months[0][11] = "December"; months[4][11] = "31";
 
         for (int i = 0; i < 12; i++) {
+            // Add the case Jan, Feb, etc.
             months[2][i] = months[0][i].substring(0, 3);
+
+            // Add the case Jan., Feb., Sept., etc.
             months[1][i] = months[2][i] + (i == 8 ? "t" : "") + ".";
+
+            // Add the case 1, 2, 3, etc.
             months[3][i] = Integer.toString(i + 1);
         }
 
+        // Input year
         do {
             System.out.print("Year: ");
             year = scanner.next();
         } while (!checkYear(year));
 
+        // Input month
         do {
             System.out.print("Month: ");
             month = scanner.next();
             monthNum = checkMonth(month);
         } while (monthNum == -1);
 
+        // Print the result
         System.out.println(Integer.parseInt(months[4][monthNum]) +
                 ((checkLeapYear(year) && monthNum == 1) ? 1 : 0));
     }

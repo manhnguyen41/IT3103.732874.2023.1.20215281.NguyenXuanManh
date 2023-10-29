@@ -1,5 +1,7 @@
 package lab01;
 
+// Write a program to solve
+
 import java.util.Scanner;
 
 public class SolveFunction {
