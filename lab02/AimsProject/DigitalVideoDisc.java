@@ -13,6 +13,8 @@ public class DigitalVideoDisc {
         this.title = title;
     }
 
+    
+
     public DigitalVideoDisc(String title, String category, double cost) {
         this(title);
         this.category = category;
