@@ -18,6 +18,7 @@ public class CartTest {
         cart.printCart();
         //To-do: Test the search methods here
         cart.searchByID(1);
+        cart.searchByID(4);
         cart.searchByTitle("Star Wars");
         cart.searchByTitle("Harry Potter");
     }
