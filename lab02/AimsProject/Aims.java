@@ -18,12 +18,15 @@ public class Aims {
                 "Animation", 18.99f);
         anOrder.addDigitalVideoDisc (dvd3);
 
-        //print number of dvd in cart
-        System.out.println("Number of dvd is: ");
-        System.out.println(DigitalVideoDisc.getNbDigitalVideoDiscs());
+        //print total cost of the items in the cart
+        System.out.println("Total Cost is: ");
+        System.out.println(anOrder.totalCost());
 
-        //print id of dvd3
-        System.out.println("Id of dvd3 is: ");
-        System.out.println(dvd3.getId());
+        // Remove the dvd1
+        anOrder.removeDigitalVideoDisc(dvd1);
+
+        //print total cost of the items in the cart after remove
+        System.out.println("Total Cost is: ");
+        System.out.println(anOrder.totalCost());
     }
 }
