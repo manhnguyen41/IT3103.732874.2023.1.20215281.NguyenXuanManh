@@ -1,5 +1,7 @@
 package lab02.AimsProject;
 
+import java.awt.*;
+
 public class Cart {
     // Attribute
     private DigitalVideoDisc []itemsOrdered =
@@ -129,5 +131,46 @@ public class Cart {
         }
 
         return Math.round(cost * 100.0) / 100.0;
+    }
+
+    // Method to print the list of ordered items of a cart,
+    // the price of each item, and the total price
+    public void printCart() {
+        System.out.println("***********************CART***********************");
+        System.out.println("Ordered Items:");
+        for (DigitalVideoDisc dvd : itemsOrdered) {
+            if (dvd != null)
+                dvd.printDVD();
+        }
+        System.out.println("Total cost: " + totalCost());
+        System.out.println("**************************************************");
+    }
+
+    // Method to search for DVDs in the cart by ID and display the search results.
+    public void searchByID(int id) {
+        boolean found = false;
+        for (DigitalVideoDisc dvd: itemsOrdered) {
+            if (dvd != null && dvd.getId() == id) {
+                found = true;
+                dvd.printDVD();
+            }
+        }
+        if (!found) {
+            System.out.println("Not found!");
+        }
+    }
+
+    // Method to search for DVDs in the cart by title and print the results.
+    public void searchByTitle(String title) {
+        boolean found = false;
+        for (DigitalVideoDisc dvd: itemsOrdered) {
+            if (dvd != null && dvd.isMatch(title)) {
+                found = true;
+                dvd.printDVD();
+            }
+        }
+        if (!found) {
+            System.out.println("Not found!");
+        }
     }
 }
