@@ -34,11 +34,6 @@ public class DigitalVideoDisc {
         this.length = length;
     }
 
-    // Method to finds out if the corresponding disk is a match given the title.
-    public boolean isMatch(String title) {
-        return title.equals(this.title);
-    }
-
     // Method to print a dvd
     public void printDVD() {
         System.out.println(id + ". DVD - "
