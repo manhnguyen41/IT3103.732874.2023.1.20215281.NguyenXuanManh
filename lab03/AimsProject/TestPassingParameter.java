@@ -1,4 +1,4 @@
-package lab02.AimsProject;
+package lab03.AimsProject;
 
 public class TestPassingParameter {
     static class DVDWrapper {

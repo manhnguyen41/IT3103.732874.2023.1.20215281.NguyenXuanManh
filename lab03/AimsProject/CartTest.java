@@ -1,4 +1,4 @@
-package lab02.AimsProject;
+package lab03.AimsProject;
 
 public class CartTest {
     public static void main(String[] args) {
