@@ -44,6 +44,11 @@ public class DigitalVideoDisc {
                 + cost + "$");
     }
 
+    // Method to finds out if the corresponding disk is a match given the title.
+    public boolean isMatch(String title) {
+        return title.equals(this.title);
+    }
+
     // Getter and Setter
     public String getTitle() {
         return title;
