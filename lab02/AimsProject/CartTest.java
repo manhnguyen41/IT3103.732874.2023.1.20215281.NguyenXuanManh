@@ -16,5 +16,9 @@ public class CartTest {
         cart.addDigitalVideoDisc (dvd3);
         //Test the print method
         cart.printCart();
+        //To-do: Test the search methods here
+        cart.searchByID(1);
+        cart.searchByTitle("Star Wars");
+        cart.searchByTitle("Harry Potter");
     }
 }
