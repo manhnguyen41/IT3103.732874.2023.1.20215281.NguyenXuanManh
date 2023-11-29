@@ -22,10 +22,8 @@ public class Test {
         Media book = new Book(3, "Harry Potter",
                 "Fiction", 18.99f);
         list.add(book);
-        for (Media media: list) {
+        for (Media media : list) {
             media.print();
         }
-
-
     }
 }
