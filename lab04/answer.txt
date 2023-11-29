@@ -1,0 +1,47 @@
+-Trong trường hợp cần so sánh các Media với nhau bằng cách implement Comparable thay vì Comparator, thì thay vì tạo class riêng cho từng Comparator, ta cần cho class Media implement interface Comparable.
+-Ví dụ như sau:
+public abstract class Media implements Comparable<Media> {
+    @Override
+    public int compareTo(Media otherMedia) {
+        // Compare by title
+        return this.title.compareTo(otherMedia.getTitle());
+    }
+}
+-Có thể, cài đặt như sau:
+public abstract class Media implements Comparable<Media> {
+    @Override
+    public int compareTo(Media otherMedia) {
+        // Compare by title first
+        int titleComparison = this.title.compareTo(otherMedia.getTitle());
+
+        // If titles are equal, compare by cost
+        return (titleComparison == 0) ? Float.compare(this.cost, otherMedia.getCost()) : titleComparison;
+    }
+}
+-Cài đặt như sau:
+public class DVD extends Media {
+    // Override compareTo for DVDs
+    @Override
+    public int compareTo(Media otherMedia) {
+        if (otherMedia instanceof DVD) {
+            DVD otherDVD = (DVD) otherMedia;
+
+            // Compare by title first
+            int titleComparison = getTitle().compareTo(otherDVD.getTitle());
+
+            // If titles are equal, compare by decreasing length
+            if (titleComparison == 0) {
+                int lengthComparison = Integer.compare(otherDVD.getLength(), getLength());
+
+                // If lengths are equal, compare by cost
+                return (lengthComparison == 0) ? Float.compare(getCost(), otherDVD.getCost()) : lengthComparison;
+            }
+
+            return titleComparison;
+        } else {
+            // For non-DVD media, use the default comparison (title then cost)
+            return super.compareTo(otherMedia);
+        }
+    }
+}
+

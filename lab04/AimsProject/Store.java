@@ -15,10 +15,11 @@ public class Store {
 
     // Method to add a media
     public void addMedia(Media media) {
-        // Add to store
+        if (itemsInStore.contains(media)) {
+            System.out.println("Media is already in the list");
+            return;
+        }
         itemsInStore.add(media);
-
-        // Notify
         System.out.println("Added");
     }
 
@@ -38,6 +39,27 @@ public class Store {
 
         // Notify
         System.out.println("Removed");
+    }
+
+    // Method to print all item in store
+    public void printStore() {
+        System.out.println("***********************STORE**********************");
+        System.out.println("Items in store:");
+        for (Media media : itemsInStore) {
+            media.print();
+        }
+        System.out.println("**************************************************");
+    }
+
+    // Method to search for media in the store by title.
+    public Media searchByTitle(String title) {
+        for (Media media: itemsInStore) {
+            if (media.isMatch(title)) {
+                return media;
+            }
+        }
+        System.out.println("Not found!");
+        return null;
     }
 
     // Getter and Setter
