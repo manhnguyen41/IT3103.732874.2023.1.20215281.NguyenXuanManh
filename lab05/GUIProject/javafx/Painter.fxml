@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lab05.GUIProject.javafx.PainterController">
+   <children>
+      <BorderPane layoutX="251.0" layoutY="4.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0">
+         <padding>
+            <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+         </padding>
+         <left>
+            <VBox maxHeight="1.7976931348623157E308" maxWidth="-Infinity" prefWidth="70.0" spacing="8.0" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets right="8.0" />
+               </BorderPane.margin>
+               <children>
+                  <TitledPane animated="false" text="Tools">
+                    <content>
+                      <AnchorPane>
+                           <children>
+                              <RadioButton mnemonicParsing="false" onAction="#penButtonPressed" selected="true" text="Pen">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="identical" />
+                                 </toggleGroup>
+                                 <padding>
+                                    <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                 </padding>
+                              </RadioButton>
+                              <RadioButton layoutY="31.0" mnemonicParsing="false" onAction="#eraserButtonPressed" selected="true" text="Eraser" toggleGroup="$identical">
+                                 <padding>
+                                    <Insets left="8.0" right="8.0" top="8.0" />
+                                 </padding>
+                              </RadioButton>
+                           </children>
+                           <padding>
+                              <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                           </padding>
+                        </AnchorPane>
+                    </content>
+                  </TitledPane>
+                  <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#clearButtonPressed" text="Clear">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <padding>
+                        <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                     </padding>
+                  </Button>
+               </children>
+            </VBox>
+         </left>
+         <center>
+            <Pane fx:id="drawingAreaPane" onMouseDragged="#drawingAreaMouseDragged" style="-fx-background-color: white;" BorderPane.alignment="CENTER" />
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>
